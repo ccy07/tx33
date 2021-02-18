@@ -1,0 +1,30 @@
+---
+output: html_document
+---
+
+```{r}
+
+library(tidyverse)
+# tidyr
+library(untidydata)
+? separate
+pre_post %>%
+  separate(data = .,
+    col = spec,
+    into = c("group", "cond"),
+    sep = "_")
+
+pre_post %>%
+  unite(., col = "silly", c("id", "spec"), sep = "_")
+pre_post %>%
+pivot_longer(
+  .,
+  cols = c("test1", "test2"),
+  names_to = "test")
+language_diversity
+language_diversity %>% 
+  pivot_wider(
+  names_from = Measurement,
+  values_from = Value)
+?language_diversity
+language_diversity
